@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'app',
 ]
 
 MIDDLEWARE = [
@@ -98,6 +99,11 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+AUTH_USER_MODEL = "app.User"
+ACCOUNT_AUTHENTICATION_METHOD = 'email' # 認証方法をメールアドレスにする
+ACCOUNT_USER_MODEL_USERNAME_FIELD = None # Userモデルにusernameは無い
+ACCOUNT_EMAIL_REQUIRED = True # メールアドレスを要求する
+ACCOUNT_USERNAME_REQUIRED = False # ユーザー名を要求しない
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.2/topics/i18n/
